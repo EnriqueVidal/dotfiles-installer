@@ -1,36 +1,35 @@
 {
-  "name": "hello-reason",
+  "name": "dofiles-installer",
   "version": "0.1.0",
   "description": "Example Reason Esy Project",
   "license": "MIT",
   "esy": {
     "build": "refmterr dune build -p #{self.name}",
     "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": {
-      "bin": [
-        "Hello"
-      ]
-    },
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    }
+    "release": { "bin": [ "Hello" ] },
+    "buildEnv": { "ODOC_SYNTAX": "re" }
   },
   "scripts": {
-    "test": "esy x Hello",
-    "doc": "esy dune build @doc"
+    "test": "esy x Hello", 
+    "doc": "esy dune build @doc",
+    "clean": "git clean -fdX ."
   },
   "dependencies": {
+    "@esy-ocaml/reason": ">= 3.4.0 < 3.6.0",
+    "@esy-ocaml/rtop": "^3.3.4",
+    "@opam/bos": "0.2.0",
     "@opam/dune": "*",
     "@reason-native/console": "*",
+    "@reason-native/fs": "^0.0.2",
     "@reason-native/pastel": "*",
     "@reason-native/rely": "*",
-    "@esy-ocaml/reason": ">= 3.4.0 < 3.6.0",
+    "ocaml": "~4.8.1000",
     "refmterr": "*",
-    "ocaml": "~4.6.0"
+    "utop": "^1.4.1"
   },
   "devDependencies": {
     "@opam/merlin": "*",
-    "ocaml": "~4.6.0",
+    "ocaml": "~4.8.1000",
     "@opam/odoc": "*"
   }
 }
